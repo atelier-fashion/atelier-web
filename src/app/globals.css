@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-peach: #E8A895;
+  --color-peach-dark: #D4917D;
+  --color-teal: #A8C6BE;
+  --color-tan: #D9C5B2;
+  --color-tan-light: #E8D9CA;
+  --color-noir: #2D2D2D;
+  --color-cream: #FAF7F4;
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background: #FAF7F4;
+  color: #2D2D2D;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}

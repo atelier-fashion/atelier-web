@@ -4,7 +4,8 @@ service cloud.firestore {
     match /waitlist/{email} {
       allow create: if request.resource.data.keys().hasAll(['email', 'createdAt'])
                     && request.resource.data.email is string
-                    && request.resource.data.email.size() > 0;
+                    && request.resource.data.email.size() > 0
+                    && request.resource.data.email.matches('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$');
       allow read, update, delete: if false;
     }
   }
